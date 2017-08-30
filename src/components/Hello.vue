@@ -3,7 +3,7 @@
     <h1>{{ msg }}</h1>
     <h2>Essential Links</h2>
     <ul>
-      <li @click="test">swx</li>
+      <li @click="testswx">swx</li>
       <li><a href="https://vuejs.org" target="_blank">Core Docs</a></li>
       <li><a href="https://forum.vuejs.org" target="_blank">Forum</a></li>
       <li><a href="https://chat.vuejs.org" target="_blank">Community Chat</a></li>
@@ -30,8 +30,15 @@ export default {
     }
   },
   methods: {
-    test() {
-      console.log('hot reload')
+    testswx() {
+        class Foo {
+            constructor(x, y) {
+                this.x = x
+                this.y = y
+            }
+        }
+        var f = new Foo(3, 4)
+        console.log(f.x)
     }
   }
 }
