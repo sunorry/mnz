@@ -1,6 +1,7 @@
 const http = require('http')
 const express = require('express')
 const webpack = require('webpack')
+const opn = require('opn')
 const webpackConfig = require('./webpack.config.js')
 
 const app = express()
@@ -56,4 +57,5 @@ var server = http.createServer(app)
 
 server.listen(8080, function() {
   console.log("Listening on %j", server.address());
+  opn('http://localhost:8080')
 })
