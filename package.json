@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "webpack"
+    "hr": "webpack --config webpack.config.hr.js"
   },
   "keywords": [],
   "author": "",

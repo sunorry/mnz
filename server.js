@@ -2,7 +2,7 @@ const http = require('http')
 const express = require('express')
 const webpack = require('webpack')
 const opn = require('opn')
-const webpackConfig = require('./webpack.config.js')
+const webpackConfig = require('./webpack.config.hr.js')
 
 const app = express()
 const compiler = webpack(webpackConfig)
