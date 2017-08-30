@@ -2,13 +2,14 @@ const path = require('path')
 const webpack = require('webpack')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const CleanWebpackPlugin = require('clean-webpack-plugin')
+const ExtractTextPlugin = require("extract-text-webpack-plugin")
 
 function resolve (_path) {
     return path.resolve(_path)
 }
 
 module.exports = {
-    entry: ['webpack-hot-middleware/client', './src/main.js'],
+    entry: ['webpack-hot-middleware/client', './src/main.js', './src/css/base.scss'],
     output: {
         path: path.resolve(__dirname, 'dist'),
         // filename: '[name]@[chunkhash].js'
@@ -26,6 +27,12 @@ module.exports = {
         }, {
             test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
             loader: 'url-loader'
+        }, {
+            test: /\.scss$/,
+            use: ExtractTextPlugin.extract({
+                fallback: 'style-loader',
+                use: ['css-loader', 'sass-loader']
+            })
         }]
     },
     devtool: '#cheap-module-eval-source-map',    
@@ -54,6 +61,7 @@ module.exports = {
         //     name: "manifest",
         //     minChunks: Infinity
         // }),
+        new ExtractTextPlugin('style.css'),
         new HtmlWebpackPlugin({
             title: 'tpl',
             template: 'index.html',
