@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "webpack --config webpack.config.dev.js"
+    "dev": "webpack --config webpack.config.dev.js",
+    "prd": "webpack --config webpack.config.prd.js"
   },
   "keywords": [],
   "author": "",
@@ -28,6 +29,7 @@
     "opn": "^5.1.0",
     "sass-loader": "^6.0.6",
     "style-loader": "^0.18.2",
+    "uglifyjs-webpack-plugin": "^0.4.6",
     "url-loader": "^0.5.9",
     "vue-loader": "^13.0.4",
     "vue-template-compiler": "^2.4.2",
