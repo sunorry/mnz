@@ -30,6 +30,9 @@ module.exports = {
             test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
             loader: 'url-loader'
         }, {
+            test: /\.css$/,
+            loader: "style-loader!css-loader"
+        }, {
             test: /\.scss$/,
             use: ExtractTextPlugin.extract({
                 fallback: 'style-loader',
@@ -41,7 +44,7 @@ module.exports = {
     resolve: {
         extensions: ['.js', '.vue', '.json'],
         alias: {
-            '@': resolve('src'),
+            '@': resolve('src')
         }
     },
     plugins: [

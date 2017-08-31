@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "webpack --config webpack.config.dev.js",
+    "dev": "webpack --watch --config webpack.config.dev.js",
     "prd": "webpack --config webpack.config.prd.js"
   },
   "keywords": [],
