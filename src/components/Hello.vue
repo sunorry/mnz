@@ -31,6 +31,7 @@ export default {
   },
   methods: {
     testswx() {
+        console.log('swx')
         class Foo {
             constructor(x, y) {
                 this.x = x
