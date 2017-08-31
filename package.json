@@ -4,7 +4,6 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "hr": "webpack --config webpack.config.hr.js",
     "dev": "webpack --config webpack.config.dev.js"
   },
   "keywords": [],
@@ -25,8 +24,6 @@
     "file-loader": "^0.11.2",
     "friendly-errors-webpack-plugin": "^1.6.1",
     "html-webpack-plugin": "^2.30.1",
-    "koa": "^2.3.0",
-    "koa-common": "^1.2.0",
     "node-sass": "^4.5.3",
     "opn": "^5.1.0",
     "sass-loader": "^6.0.6",

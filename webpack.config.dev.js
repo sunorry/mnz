@@ -11,7 +11,7 @@ function resolve(_path) {
 }
 
 module.exports = {
-    entry: ['./src/main.js'],
+    entry: ['./src/main.js', './src/css/base.scss'],
     output: {
         path: path.resolve(__dirname, 'dist'),
         // filename: '[name]@[chunkhash].js'
@@ -37,7 +37,7 @@ module.exports = {
             })
         }]
     },
-    devtool: '#cheap-module-eval-source-map',
+    devtool:  '#cheap-module-eval-source-map',
     resolve: {
         extensions: ['.js', '.vue', '.json'],
         alias: {
@@ -48,10 +48,9 @@ module.exports = {
         new webpack.DefinePlugin({
             'process.env': JSON.stringify('development')
         }),
-        // new webpack.HotModuleReplacementPlugin(),
-        new webpack.NoEmitOnErrorsPlugin(),
+        // new webpack.NoEmitOnErrorsPlugin(),
         new CleanWebpackPlugin(['dist']),
-        // new webpack.HashedModuleIdsPlugin(),
+        new webpack.HashedModuleIdsPlugin(),
         new webpack.optimize.CommonsChunkPlugin({
             name: 'vendor',
             minChunks: function(module) {
@@ -63,12 +62,11 @@ module.exports = {
             name: "manifest",
             minChunks: Infinity
         }),
-        // new ExtractTextPlugin('style.css'),
+        new ExtractTextPlugin('style.css'),
         new HtmlWebpackPlugin({
             title: 'tpl',
             template: 'index.html',
             // inject: true
         }),
-        new FriendlyErrorsWebpackPlugin()
     ]
 }
