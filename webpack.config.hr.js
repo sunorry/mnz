@@ -49,6 +49,7 @@ module.exports = {
         }),
         new webpack.HotModuleReplacementPlugin(),
         new webpack.NoEmitOnErrorsPlugin(),
+        new webpack.NamedModulesPlugin(),
         // new CleanWebpackPlugin(['dist']),
         // new webpack.HashedModuleIdsPlugin(),
         // new webpack.optimize.CommonsChunkPlugin({
